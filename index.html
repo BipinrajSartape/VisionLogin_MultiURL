@@ -1,0 +1,73 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>Home</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
+
+	<body onload="displayMsg(); getMACAddress(); getGeoLocation();test();" id="bg-img">
+		<div id="my-iframe-div" class="my-iframe">
+		</div>
+		<div class="container" id="container-login">
+			<div class="login_container tdTransitionInRight">
+				<div class="form_container">
+
+					<div id="tab" class="tab-container">
+						<button class="tab-button active" onclick="showTab(0)">Customer</button>
+						<button class="tab-button" onclick="showTab(1)">Employee</button>
+						
+					</div>
+					<div class="" id="top-logo"></div>
+
+					<form class="login_form" method="post" action="/ibase/AuthenticateServlet" name="login"
+						autocomplete="off">
+						<input type="hidden" name="AUTH_MODE" value="I">
+						<input type="hidden" id="CLIENT_IP" name="CLIENT_IP" value="">
+						<input type="hidden" id="APPL_NAME" name="APPL_NAME" value="SFA">
+						<input type="hidden" id="MAC_ADDRESS" name="MAC_ADDRESS" value=''>
+						<input type="hidden" id="CURRENT_GEO_POS" name="CURRENT_GEO_POS" value=''>
+						<input type="hidden" id="ACTIVE" name="ACTIVE" value='Y'>
+						<input type="hidden" id="FROM_CACHE" name="FROM_CACHE" value=''>
+
+						<div class="field-container" id="input-bg">
+							<div class="" id="login-icon"><i class="fa-solid fa-user"></i></div>
+							<div class="field_cont">
+								<input required type="text" id="id_user" name="USER" onblur="createIndexedDBTable();" />
+								<div id="user_id_lbl">User ID, Email or Mobile No.</div>
+							</div>
+						</div>
+
+						<div class="field-container" id="input-bg-ps">
+							<div class="" id="login-icon-p"><i class="fa-solid fa-lock"></i></div>
+							<div class="field_cont">
+								<input required type="password" name="PASSWORD" id="id_password" autocomplete="off" />
+								<div id="pass_id_lbl">Password</div>
+							</div>
+						</div>
+
+						<div class="login-forgot_password">
+							<div><a class="login_forgot_href" href="javascript:forgotPassword();" id="forgot-ps">Forgot
+									Password ?</a></div>
+						</div>
+						<input type="hidden" name="isSHA256Appld" value="true">
+						<input type="hidden" name="loginMode" id="loginMode" value="RIA Lite">
+						<input type="submit" style="display:none;" id="id_login" name="Login" value="Login"
+							onclick="convertIntoSHA256('id_password')">
+						<div class="login_button" id="log-button" onclick="loginFunc();">Login</div>
+						<div id="message" class="login-sess-exp"></div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<script src="js/app.js"></script>
+	</body>
+
+</html>
