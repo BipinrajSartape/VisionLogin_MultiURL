@@ -334,6 +334,7 @@ function test() {
         document.getElementById("input-bg").className = "input-bg";
         document.getElementById("input-bg-ps").className = "input-bg";
         document.getElementById("container-login").className = "insight-sidepannel";
+        document.getElementById("reg").style.display = "block";
 
         if (document.getElementById("visionbooks-frame") != null) {
             document.getElementById("visionbooks-frame").style.display = "block";
