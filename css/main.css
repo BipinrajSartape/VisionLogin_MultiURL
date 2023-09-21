@@ -79,7 +79,7 @@ body {
     justify-content: center;
     margin: 1rem 0 0 0;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: all 3ms linear;
     box-shadow: inset 0px 0px 0px 1px rgb(46 146 109 / 45%);
     
